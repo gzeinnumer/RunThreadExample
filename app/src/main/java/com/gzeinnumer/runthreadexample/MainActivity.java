@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.Timer;
@@ -17,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         run1();
-        run2();
-        run3();
-        run4();
+//        run2();
+//        run3();
+//        run4();
     }
 
     private void run1() {
@@ -27,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                Toast.makeText(MainActivity.this, "Coba", Toast.LENGTH_SHORT).show();
+                Log.d(getClass().getSimpleName(), "r_un: ");
+
             }
         }, 1, 6000);
+
     }
 
     private void run2() {
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    Toast.makeText(MainActivity.this, "COba", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Coba", Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(MainActivity.this, "COba", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Coba", Toast.LENGTH_SHORT).show();
             }
         }, 4000);
     }
